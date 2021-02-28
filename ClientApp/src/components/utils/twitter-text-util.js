@@ -1,6 +1,8 @@
 ﻿import twttr from 'twitter-text';
+import { getFunctionSecretKey } from './azure-key-value'
+import get
 
-export function validateTweetBody(text) {
+export const validateTweetBody = (text)=> {
     const result = twttr.parseTweet(text);
     const maxChars = 280;
     if (result) {
@@ -11,4 +13,9 @@ export function validateTweetBody(text) {
             isValid: isValid
         }
     }
+}
+
+export const validateTweetAzureFunction = async(text)=>{
+    const functionSecretKey = await getFunctionSecretKey(functionName);
+    const functionResult = await getFunctionValidateTweetBody()
 }
