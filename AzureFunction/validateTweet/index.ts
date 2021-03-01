@@ -20,7 +20,7 @@ const validateTweetBody = (text): any => {
 To test locally:
 
 curl -i \
-    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
     --request POST \
     --data '{"tweetText":"This is my tweet"}' \
     http://localhost:7071/api/validateTweet
@@ -47,7 +47,10 @@ const httpTrigger: AzureFunction = async (context: Context, req: HttpRequest): P
     }
     */
     context.res = {
-        body: validation
+        body: validation,
+        headers: {
+            "Content-Type":"application/json"
+        }
     };
 
 };
