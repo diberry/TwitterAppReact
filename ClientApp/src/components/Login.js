@@ -24,7 +24,11 @@ export class Login extends Component {
                             <span className="align-middle ml-2">Microsoft employee sign in</span>
                         </button>
                     </div>
+
                 </div>
+                <div className="row justify-content-center login-container">
+                        <p>There's a known issue with new users getting an "admin approval" required message. If you're seeing this error, please reach out to the dev team directly at twitterapp@microsoft.com for a temporary workaround while MSIT resolves the issue.</p>
+                    </div>
             </div>
         );
     }
